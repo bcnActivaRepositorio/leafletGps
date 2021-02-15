@@ -141,17 +141,15 @@ function myPosition() {
     iconSize: [32, 37],
     iconAnchor: [16, 37],
     popupAnchor: [0, -30],
-    /*shadowUrl: 'my-icon-shadow.png',
-    shadowRetinaUrl: 'my-icon-shadow@2x.png',
-    shadowSize: [68, 95],
-    shadowAnchor: [22, 94]*/
+   
 });
+  // only gets THE current position when loading page, doesn't follow!!
   navigator.geolocation.getCurrentPosition(function(position) {
     startPos = position;
     let myLat = startPos.coords.latitude;
     let myLng = startPos.coords.longitude;
     console.log(myLat, myLng);
-    // return (myLat, myLng);
+    // my own Icon to define myt position in map
     marker = new L.Marker(new L.LatLng(myLat,myLng), {icon: myIcon});
     let info = (`This is my current position. <br/> Latitude: ${myLat.toFixed(2)}<br/> Longitude: ${myLng.toFixed(2)}`);
     popUp = new L.Popup({maxHeight: 175, maxWidth: 400}).setContent(info);
