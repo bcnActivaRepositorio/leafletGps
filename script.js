@@ -26,7 +26,8 @@ function onMapLoad() {
 	// let ownUrl = "http://localhost/mapa/api/apiRestaurants.php";
 	// FAKE API
 	// json-server fake db at localhost:3000
-	 let ownUrl = "http://localhost:3000/bares"
+	// let ownUrl = "http://localhost:3000/bares"
+	 let ownUrl = "https://github.com/bcnActivaRepositorio/leafletGps/blob/[main|master]/db.json"
 	// 1) Relleno el data_markers con una petición a la api
 	$.getJSON(ownUrl, function(data){
 		// we get the whole object
