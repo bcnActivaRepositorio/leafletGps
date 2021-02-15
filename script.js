@@ -23,7 +23,7 @@ let findMe;
 
 function onMapLoad() {
 	// get the data 
-	// let ownUrl = "http://localhost/mapa/api/apiRestaurants.php";
+	// let ownUrl = "http://localhost/mnapa/api/apiRestaurants.php";
 	// FAKE API
 	// json-server fake db at localhost:3000
 	// let ownUrl = "http://localhost:3000/bares"
