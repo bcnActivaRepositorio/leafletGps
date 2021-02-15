@@ -27,7 +27,7 @@ function onMapLoad() {
 	// FAKE API
 	// json-server fake db at localhost:3000
 	// let ownUrl = "http://localhost:3000/bares"
-	 let ownUrl = "https://github.com/bcnActivaRepositorio/leafletGps/blob/master/db.json"
+	 let ownUrl = "https://my-json-server.typicode.com/bcnActivaRepositorio/leafletGps/bares"
 	// 1) Relleno el data_markers con una petición a la api
 	$.getJSON(ownUrl, function(data){
 		// we get the whole object
