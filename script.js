@@ -38,19 +38,13 @@ function onMapLoad() {
 		// 2) Añado de forma dinámica en el select los posibles tipos de restaurantes con numero de indice
 		for(let f in dataFood){
 			  $('#kind_food_selector').append($('<option>', {value: f, text: dataFood[f]}));
-	
-		  }
-		  
+		  }  
 	});	
-
 }
 
 $('#kind_food_selector').on('change', function() {
-
   render_to_map(dataFood, this.value);
 });
-
-
 
 function render_to_map(data,filter){
 	if (filter == "all"){
@@ -100,12 +94,11 @@ function makeMarkers(data){
 			// fill the arr for delete and add
 			data_markers.push(marker);
 			let info = (`${data.name} <br/> ${data.address}<br/> <strong>Tipo de cocina</strong>:<br/> ${data.kind_food}<br/>${data.photo}`);
-			popUp = new L.Popup({maxHeigth: 175, maxWidth: 400}).setContent(info);
-			markers.addLayer(marker.bindPopup(popUp));
-			markers.addTo(map);
+			addInfo(info);
 }
-
+// clear arr from repeated data
 const cleanArr = (arr) => arr.filter((foodType, position) => arr.indexOf(foodType) == position );
+
 // function myPosition
 function myPosition() {
   // my icon for the gps
@@ -125,15 +118,18 @@ function myPosition() {
     // my own Icon to define myt position in map
     marker = new L.Marker([myLat,myLng], {icon: myIcon});
     let info = (`This is my current position. <br/> Latitude: ${myLat.toFixed(2)}<br/> Longitude: ${myLng.toFixed(2)}`);
-    popUp = new L.Popup({maxHeight: 175, maxWidth: 400}).setContent(info);
-    markers.addLayer(marker.bindPopup(popUp));
-	markers.addTo(map);
+    addInfo(info);
   },
   (error) => {
 	  console.log(error);
   });
 };
-
+// add info
+function addInfo(str){
+	popUp = new L.Popup({maxHeight: 175, maxWidth: 400}).setContent(str);
+    markers.addLayer(marker.bindPopup(popUp));
+	markers.addTo(map);
+}
 
 /*****************************************************************************************************************/
 // RESEARCH 
