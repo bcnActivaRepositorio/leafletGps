@@ -1,5 +1,5 @@
 <?php
-
+ Header set Access-Control-Allow-Origin "*"
 $mysqli = new mysqli('127.0.0.1', 'root', '', 'my_app');
 
 if ($mysqli->connect_errno) {
